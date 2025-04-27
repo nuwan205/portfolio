@@ -51,7 +51,7 @@
 .brand-img{
     width: 90px;
     height: 90px;
-    background-image: url('/img/brand.png');
+    background-image: url('./img/brand.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -112,7 +112,7 @@
 .displaypicture{
     width: 500px;
     height: 500px;
-    background-image: url('/img/displaypic.png');
+    background-image: url('./img/displaypic.png');
     background-size: cover;
 }
 
