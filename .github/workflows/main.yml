@@ -19,7 +19,7 @@ jobs:
 
       - name: Notify Rollbar
         env:
-          ROLLBAR_TOKEN: 1dc3d42be0fe41f1936467bc7ec26f0cc8971c707865f7cbb6c0036894f9e692a5d5371a5311e7590c4e51b02169f411
+          ROLLBAR_TOKEN: 3a9621c6b5794c2fa3fa337c55bf67b5028dcc870b0cc9b0dd61379efa8d505455b0f2690d4d5c04f12485947d93af71
         run: |
           curl https://api.rollbar.com/api/1/deploy/ \
             -F access_token=$ROLLBAR_TOKEN \
