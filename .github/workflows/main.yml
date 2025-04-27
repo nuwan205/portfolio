@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - Test
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to production
+        run: |
+          echo "Your deployment script here"
+
+      - name: Notify Rollbar
+        env:
+          ROLLBAR_TOKEN: 1dc3d42be0fe41f1936467bc7ec26f0cc8971c707865f7cbb6c0036894f9e692a5d5371a5311e7590c4e51b02169f411
+        run: |
+          curl https://api.rollbar.com/api/1/deploy/ \
+            -F access_token=$ROLLBAR_TOKEN \
+            -F environment=production \
+            -F revision=${{ github.sha }} \
+            -F local_username=${{ github.actor }} \
+            -F rollbar_username=${{ github.actor }}
+
